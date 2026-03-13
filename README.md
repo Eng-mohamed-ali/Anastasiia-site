@@ -61,5 +61,4 @@ The goal of this project is to provide a polished, professional, and presentatio
 ---
 
 
-├── styles/
-└── utils/
+
