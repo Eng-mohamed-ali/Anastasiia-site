@@ -1,0 +1,261 @@
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Shield,
+  Users,
+  Sparkles,
+  Megaphone,
+  Star,
+  Award,
+  Heart,
+  Target,
+  ArrowUpRight,
+  Mic2,
+  CheckCircle2,
+} from "lucide-react";
+import Container from "../components/common/Container";
+import Button from "../components/common/Button";
+
+const reasons = [
+  {
+    icon: Shield,
+    title: "A trusted voice in Dubai",
+    description:
+      "Anastasia brings years of experience across digital strategy, storytelling, and brand positioning, giving your message credibility and a stronger professional frame.",
+    stats: "15+ Years Experience",
+    accent: "Credibility",
+  },
+  {
+    icon: Users,
+    title: "Access to meaningful connections",
+    description:
+      "By joining Moments with Anastasia, you are positioned alongside entrepreneurs, creatives, leaders, and public voices within a curated network.",
+    stats: "200+ Network",
+    accent: "Visibility",
+  },
+  {
+    icon: Sparkles,
+    title: "Storytelling that elevates your brand",
+    description:
+      "The conversation is shaped to uncover the strongest parts of your story and present them with clarity, depth, and emotional resonance.",
+    stats: "100+ Episodes",
+    accent: "Positioning",
+  },
+  {
+    icon: Megaphone,
+    title: "Marketing power behind every episode",
+    description:
+      "With strong digital growth experience, each episode is designed not only to be recorded well, but to travel further and perform better after release.",
+    stats: "1M+ Reach",
+    accent: "Amplification",
+  },
+];
+
+const achievements = [
+  { icon: Award, label: "Featured in", value: "Business Dubai" },
+  { icon: Star, label: "Podcast rating", value: "5.0 Stars" },
+  { icon: Heart, label: "Audience", value: "50K+ Monthly" },
+  { icon: Target, label: "Guest satisfaction", value: "98%" },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      delay,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+const WhyMePage = () => {
+  return (
+    <div className="min-h-screen bg-black pt-28 pb-24 text-white">
+      <Container>
+        {/* Header */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.04}
+          className="mx-auto mb-14 max-w-4xl text-center"
+        >
+          <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 backdrop-blur-md">
+            <Mic2 className="h-4 w-4 text-red-400" />
+            <span className="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">
+              Why this platform
+            </span>
+          </div>
+
+          <h1 className="heading-xl text-white md:heading-display mb-5">
+            Why work with Anastasia
+          </h1>
+
+          <p className="mx-auto max-w-3xl text-body-lg text-white/78">
+            This is more than a guest appearance. It is a premium opportunity to
+            shape your story, strengthen your credibility, and create more
+            meaningful visibility.
+          </p>
+
+          <div className="mt-8">
+            <Button to="/book-slot" variant="primary" className="min-w-[220px]">
+              BOOK A PODCAST SLOT
+            </Button>
+          </div>
+        </motion.div>
+
+        {/* Achievements */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.1}
+          className="mb-20 grid grid-cols-2 gap-4 md:grid-cols-4"
+        >
+          {achievements.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="rounded-[1.5rem] border border-white/12 bg-white/[0.05] p-6 text-center shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+              >
+                <Icon className="mx-auto mb-3 h-8 w-8 text-red-400" />
+                <div className="text-2xl font-semibold text-white">{item.value}</div>
+                <div className="mt-1 text-sm uppercase tracking-[0.14em] text-white/55">
+                  {item.label}
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
+
+        {/* Main Reasons */}
+        <div className="mb-20 grid gap-6 md:grid-cols-2">
+          {reasons.map((reason, index) => {
+            const Icon = reason.icon;
+            const featured = index === 0 || index === 3;
+
+            return (
+              <motion.article
+                key={index}
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={0.14 + index * 0.06}
+                className={`group relative overflow-hidden rounded-[1.8rem] border p-7 transition-all duration-300 sm:p-8 ${
+                  featured
+                    ? "border-white/16 bg-white/[0.07] shadow-[0_24px_80px_rgba(0,0,0,0.24)]"
+                    : "border-white/12 bg-white/[0.05] shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+                } hover:-translate-y-1 hover:bg-white/[0.06]`}
+              >
+                <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-red-500/10 blur-3xl" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_35%)]" />
+
+                <div className="relative z-10">
+                  <div className="mb-6 flex items-center justify-between gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.06] text-red-400">
+                      <Icon className="h-6 w-6" />
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/62">
+                        {reason.accent}
+                      </span>
+                      <span className="font-display text-2xl font-semibold text-red-300/85">
+                        0{index + 1}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3 className="mb-4 font-display text-[1.9rem] font-semibold leading-tight text-white">
+                    {reason.title}
+                  </h3>
+
+                  <p className="mb-6 text-base leading-8 text-white/74">
+                    {reason.description}
+                  </p>
+
+                  <div className="inline-flex rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-sm font-medium text-white/82">
+                    {reason.stats}
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        {/* Featured Testimonial / CTA */}
+        <motion.section
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.42}
+          className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-gradient-to-br from-white/[0.08] via-red-500/10 to-white/[0.03] p-10 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+        >
+          <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
+
+          <div className="relative z-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div>
+              <Star className="mb-6 h-12 w-12 text-[#c6a96b]" />
+
+              <p className="font-display text-[2rem] italic leading-tight text-white sm:text-[2.5rem]">
+                “Working with Anastasia transformed how I share my story. Her
+                expertise in storytelling and brand positioning took my message
+                to a completely different level.”
+              </p>
+
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/14 bg-white/15 text-lg font-semibold text-white">
+                  S
+                </div>
+                <div>
+                  <div className="text-xl font-semibold text-white">
+                    Sarah Johnson
+                  </div>
+                  <div className="text-white/75">
+                    Entrepreneur & Podcast Guest
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[1.8rem] border border-white/12 bg-white/[0.05] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
+              <p className="eyebrow mb-4">Why it matters</p>
+
+              <h2 className="heading-lg mb-6 text-white">
+                A conversation can become a long-term brand asset.
+              </h2>
+
+              <div className="space-y-4">
+                {[
+                  "Stronger authority and credibility",
+                  "Deeper emotional audience connection",
+                  "A more human and memorable public narrative",
+                  "Visibility that continues beyond the episode release",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-red-400" />
+                    <span className="text-white/82">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <Button to="/book-slot" variant="secondary">
+                  Get Started
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+      </Container>
+    </div>
+  );
+};
+
+export default WhyMePage;
