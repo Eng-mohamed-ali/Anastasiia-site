@@ -1,50 +1,51 @@
 # Anastasiia Site
 
-A premium podcast and personal brand website built for **Anastasiia Solodovnyk**.  
-This project presents a modern, elegant, and high-converting digital presence for a podcast host, speaker, and media personality.
+A premium personal brand and podcast website built for **Anastasiia Solodovnyk**.
+
+This project was designed to present a modern, elegant, and high-end digital presence for a podcast host, speaker, and media personality. The website combines strong visual storytelling with a clean user experience, making it suitable for client presentation, brand positioning, and public visibility.
 
 ## Live Demo
-Add your live link here after deployment:
+Add your live link here after deployment.
 
-**Live Website:** [View Live Site](https://your-live-link-here)
+**Website:** [View Live Site](https://your-live-link-here)
 
-## GitHub Repository
-[Repository Link](https://github.com/Eng-mohamed-ali/Anastasiia-site)
+## Repository
+[GitHub Repository](https://github.com/Eng-mohamed-ali/Anastasiia-site)
 
 ---
 
-## Overview
+## Project Overview
 
-This website was designed and developed to reflect a premium brand identity with a strong editorial and luxury-inspired visual direction.
+The website was created to reflect a premium brand identity with a cinematic and editorial-inspired visual style.
 
 It includes:
-- A cinematic hero section
-- Brand story / about section
-- Services presentation
+
+- Premium hero section
+- Story-driven about section
+- Services section
 - Podcast episodes showcase
 - Why work with me section
 - Reviews and testimonials
 - FAQ page
-- Booking / contact flow
+- Booking / contact page
 - Terms page
 - Service detail pages
 - Episode detail pages
 
-The goal of this project is to provide a polished, professional online presence that can be confidently shared with potential clients, podcast guests, collaborators, and business partners.
+The goal of this project is to provide a polished, professional, and presentation-ready online presence.
 
 ---
 
 ## Features
 
-- Premium modern UI
-- Responsive layout for desktop, tablet, and mobile
-- Multi-page React application
-- Smooth animations using Framer Motion
-- Elegant dark luxury-inspired design system
-- Reusable component structure
-- Service pages and episode pages
-- Contact and booking sections
-- Fast production-ready Vite setup
+- Responsive design for desktop, tablet, and mobile
+- Premium dark luxury-inspired UI
+- Smooth animations with Framer Motion
+- Reusable React component structure
+- Multi-page routing with React Router
+- Elegant content presentation for podcast branding
+- Clean and scalable code structure
+- Production-ready Vite setup
 
 ---
 
@@ -59,19 +60,6 @@ The goal of this project is to provide a polished, professional online presence 
 
 ---
 
-## Project Structure
 
-```bash
-src/
-├── assets/
-│   └── images/
-├── components/
-│   ├── common/
-│   ├── layout/
-│   └── sections/
-├── context/
-├── hooks/
-├── pages/
-├── routes/
 ├── styles/
 └── utils/
